@@ -1,0 +1,5 @@
+What happens if users choose “Cancel”?
+- If users choose "Cancel", the method returns JOptionPane.CANCEL_OPTION
+How to customize the options to users, e.g. only two options: “Yes” and “No”, OR “I do” and “I don’t”?
+- We can use JOptionPane.showOptionDialog() to customize the options shown to users.
+For example, we can replace the default buttons with custom options like "I do" and "I don't"
