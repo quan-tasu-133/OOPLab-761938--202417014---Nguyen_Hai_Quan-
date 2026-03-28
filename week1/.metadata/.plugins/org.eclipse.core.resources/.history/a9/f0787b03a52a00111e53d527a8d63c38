@@ -4,7 +4,6 @@ public class Assignment64 {
     public static void main(String args[]) {
 
         Scanner keyboard = new Scanner(System.in);
-
         int month;
         int year;
 
