@@ -11,7 +11,6 @@ public class Cart {
         if (qtyOrdered < MAX_NUMBERS_ORDERED) {
             itemsOrdered[qtyOrdered] = disc;
             qtyOrdered++;
-            System.out.println("The disc has been added");
         } else {
             System.out.println("The cart is almost full");
         }
@@ -25,7 +24,6 @@ public class Cart {
                 }
                 itemsOrdered[qtyOrdered - 1] = null;
                 qtyOrdered--;
-                System.out.println("The disc has been removed");
                 return;
             }
         }
@@ -37,5 +35,13 @@ public class Cart {
             total += itemsOrdered[i].getCost();
         }
         return total;
+    }
+
+    public void printCart() {
+        for (int i = 0; i < qtyOrdered; i++) {
+            System.out.println((i + 1) + "    " 
+                + itemsOrdered[i].getTitle() + "    " 
+                + itemsOrdered[i].getCost());
+        }
     }
 }
