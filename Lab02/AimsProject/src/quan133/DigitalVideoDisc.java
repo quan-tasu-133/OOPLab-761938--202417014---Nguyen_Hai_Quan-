@@ -1,7 +1,6 @@
 package quan133;
 
 public class DigitalVideoDisc {
-
     private static int nbDigitalVideoDiscs = 0;
     private int id;
 
@@ -12,7 +11,6 @@ public class DigitalVideoDisc {
     private float cost;
 
     public DigitalVideoDisc(String title) {
-        super();
         this.title = title;
         nbDigitalVideoDiscs++;
         this.id = nbDigitalVideoDiscs;
