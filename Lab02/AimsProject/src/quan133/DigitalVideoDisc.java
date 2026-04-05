@@ -1,7 +1,23 @@
 package quan133;
 
 public class DigitalVideoDisc {
-    private String title;
+    public DigitalVideoDisc(String title) {
+		super();
+		this.title = title;
+	}
+    public DigitalVideoDisc(String title, String category, float cost) {
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+    }
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+        this.title = title;
+        this.category = category;
+        this.director = director;
+        this.length = length;
+        this.cost = cost;
+    }
+	private String title;
     private String category;
     private String director;
     private int length;
