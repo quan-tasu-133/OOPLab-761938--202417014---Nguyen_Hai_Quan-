@@ -1,4 +1,4 @@
-package quan133;
+package hust.soict.dsai.aims;
 
 public class DigitalVideoDisc {
 
