@@ -2,7 +2,9 @@ package hust.soict.dsai.aims;
 
 public class CartTest {
     public static void main(String[] args) {
-              Cart cart = new Cart();
+
+        Cart cart = new Cart();
+
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
         cart.addDigitalVideoDisc(dvd1);
 
@@ -11,12 +13,26 @@ public class CartTest {
 
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
         cart.addDigitalVideoDisc(dvd3);
-        cart.print();
+
+        cart.printCart();
+
         System.out.println("\n--- Search Results ---");
-                cart.searchById(1); 
-        cart.searchById(5); 
-        
+
+        DigitalVideoDisc result = cart.searchById(1);
+        if (result != null) {
+            System.out.println(result);
+        } else {
+            System.out.println("No match found");
+        }
+
+        result = cart.searchById(5);
+        if (result != null) {
+            System.out.println(result);
+        } else {
+            System.out.println("No match found");
+        }
+
         cart.searchByTitle("Star Wars");
         cart.searchByTitle("Harry Potter");
-        }
+    }
 }
