@@ -9,26 +9,33 @@ public class Aims {
 
         Cart cart = new Cart();
 
-        Book book = new Book();
-        book.setTitle("Java");
-        book.setCost(20.5f);
+        Book book = new Book(1, "Java", "IT", 20.5f);
 
-        DigitalVideoDisc dvd = new DigitalVideoDisc();
-        dvd.setTitle("Lion King");
-        dvd.setCost(19.95f);
+        DigitalVideoDisc dvd =
+            new DigitalVideoDisc(
+                2,
+                "Lion King",
+                "Animation",
+                19.95f,
+                87,
+                "Roger Allers"
+            );
 
-        CompactDisc cd = new CompactDisc();
-        cd.setTitle("Music CD");
-        cd.setCost(25.0f);
+        CompactDisc cd =
+            new CompactDisc(
+                3,
+                "Music CD",
+                "Music",
+                25.0f,
+                60,
+                "ABC",
+                "Taylor Swift"
+            );
 
         cart.addMedia(book);
         cart.addMedia(dvd);
         cart.addMedia(cd);
 
         System.out.println("Total cost: " + cart.totalCost());
-
-        cart.removeMedia(dvd);
-
-        System.out.println("Total cost after remove: " + cart.totalCost());
     }
 }

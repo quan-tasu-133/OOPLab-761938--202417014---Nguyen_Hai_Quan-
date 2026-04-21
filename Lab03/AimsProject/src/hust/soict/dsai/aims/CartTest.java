@@ -1,38 +1,41 @@
 package hust.soict.dsai.aims;
 
+import hust.soict.dsai.aims.media.Book;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.CompactDisc;
+
 public class CartTest {
     public static void main(String[] args) {
 
         Cart cart = new Cart();
 
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
-        cart.addDigitalVideoDisc(dvd1);
+        Book book = new Book(1, "Java", "IT", 20.5f);
 
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
-        cart.addDigitalVideoDisc(dvd2);
+        DigitalVideoDisc dvd =
+            new DigitalVideoDisc(
+                2,
+                "Lion King",
+                "Animation",
+                19.95f,
+                87,
+                "Roger Allers"
+            );
 
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
-        cart.addDigitalVideoDisc(dvd3);
+        CompactDisc cd =
+            new CompactDisc(
+                3,
+                "Music CD",
+                "Music",
+                25.0f,
+                60,
+                "ABC",
+                "Taylor Swift"
+            );
 
-        cart.printCart();
+        cart.addMedia(book);
+        cart.addMedia(dvd);
+        cart.addMedia(cd);
 
-        System.out.println("\n--- Search Results ---");
-
-        DigitalVideoDisc result = cart.searchById(1);
-        if (result != null) {
-            System.out.println(result);
-        } else {
-            System.out.println("No match found");
-        }
-
-        result = cart.searchById(5);
-        if (result != null) {
-            System.out.println(result);
-        } else {
-            System.out.println("No match found");
-        }
-
-        cart.searchByTitle("Star Wars");
-        cart.searchByTitle("Harry Potter");
+        System.out.println("Total cost: " + cart.totalCost());
     }
 }
