@@ -5,22 +5,22 @@ public class DigitalVideoDisc extends Media {
     private String director;
     private int length;
 
-    public DigitalVideoDisc(int id, String title, String category,
-                            String director, int length, float cost) {
-        super(id, title, category, cost);
-        this.director = director;
-        this.length = length;
+    public DigitalVideoDisc() {
     }
 
     public String getDirector() {
         return director;
     }
 
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
     public int getLength() {
         return length;
     }
 
-    public String toString() {
-        return super.toString() + " - " + director + " - " + length;
+    public void setLength(int length) {
+        this.length = length;
     }
 }
