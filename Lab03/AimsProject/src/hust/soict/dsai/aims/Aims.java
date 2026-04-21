@@ -1,29 +1,34 @@
 package hust.soict.dsai.aims;
 
+import hust.soict.dsai.aims.media.Book;
+import hust.soict.dsai.aims.media.CompactDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
+
 public class Aims {
     public static void main(String[] args) {
 
-        Cart anOrder = new Cart();
+        Cart cart = new Cart();
 
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
+        Book book = new Book();
+        book.setTitle("Java");
+        book.setCost(20.5f);
 
-        anOrder.addDigitalVideoDisc(dvd1);
-        anOrder.addDigitalVideoDisc(dvd2);
-        anOrder.addDigitalVideoDisc(dvd3);
+        DigitalVideoDisc dvd = new DigitalVideoDisc();
+        dvd.setTitle("Lion King");
+        dvd.setCost(19.95f);
 
-        anOrder.printCart();
+        CompactDisc cd = new CompactDisc();
+        cd.setTitle("Music CD");
+        cd.setCost(25.0f);
 
-        anOrder.removeDigitalVideoDisc(dvd2);
+        cart.addMedia(book);
+        cart.addMedia(dvd);
+        cart.addMedia(cd);
 
-        System.out.println();
-        anOrder.printCart();
+        System.out.println("Total cost: " + cart.totalCost());
 
-        System.out.println("\nSearch by ID:");
-        System.out.println(anOrder.searchById(1));
+        cart.removeMedia(dvd);
 
-        System.out.println("\nSearch by title:");
-        anOrder.searchByTitle("Aladin");
+        System.out.println("Total cost after remove: " + cart.totalCost());
     }
 }
