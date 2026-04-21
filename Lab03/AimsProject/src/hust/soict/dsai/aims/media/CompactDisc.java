@@ -2,25 +2,38 @@ package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
 
-public class CompactDisc extends Media {
+public class CompactDisc extends Disc {
 
     private String artist;
-    private String director;
     private ArrayList<Track> tracks = new ArrayList<Track>();
 
-    public CompactDisc(int id, String title, String category,
-                       String artist, String director, float cost) {
-        super(id, title, category, cost);
+    public CompactDisc() {
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
         this.artist = artist;
-        this.director = director;
     }
 
     public void addTrack(Track track) {
-        tracks.add(track);
+        if (!tracks.contains(track)) {
+            tracks.add(track);
+            System.out.println("Track added");
+        } else {
+            System.out.println("Track already exists");
+        }
     }
 
     public void removeTrack(Track track) {
-        tracks.remove(track);
+        if (tracks.contains(track)) {
+            tracks.remove(track);
+            System.out.println("Track removed");
+        } else {
+            System.out.println("Track not found");
+        }
     }
 
     public int getLength() {
@@ -31,10 +44,5 @@ public class CompactDisc extends Media {
         }
 
         return total;
-    }
-
-    public String toString() {
-        return super.toString() + " - " + artist + " - "
-                + director + " - Length: " + getLength();
     }
 }
