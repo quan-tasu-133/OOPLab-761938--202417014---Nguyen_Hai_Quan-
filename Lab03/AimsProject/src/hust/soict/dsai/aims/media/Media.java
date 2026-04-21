@@ -29,4 +29,13 @@ public abstract class Media {
     public float getCost() {
         return cost;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Media) {
+            Media other = (Media) obj;
+            return this.title.equals(other.title);
+        }
+        return false;
+    }
 }
