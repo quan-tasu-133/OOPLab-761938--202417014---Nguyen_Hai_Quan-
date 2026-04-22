@@ -4,15 +4,13 @@ import java.util.Comparator;
 
 public class MediaComparatorByTitleCost implements Comparator<Media> {
 
-    @Override
     public int compare(Media m1, Media m2) {
+        int result = m1.getTitle().compareTo(m2.getTitle());
 
-        int titleResult =
-            m1.getTitle().compareToIgnoreCase(m2.getTitle());
+        if (result == 0) {
+            return Float.compare(m1.getCost(), m2.getCost());
+        }
 
-        if (titleResult != 0)
-            return titleResult;
-
-        return Float.compare(m1.getCost(), m2.getCost());
+        return result;
     }
 }
